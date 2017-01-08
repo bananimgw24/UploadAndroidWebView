@@ -1,4 +1,4 @@
-package com.example.bghosh.test3upload;
+package com.in.thewizards.fosg;
 
 import android.annotation.TargetApi;
 import android.content.ActivityNotFoundException;
@@ -15,7 +15,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-import static com.example.bghosh.test3upload.R.id.webView;
+import static com.in.thewizards.fosg.R.id.webView;
 
 public class MainActivity extends AppCompatActivity {
 

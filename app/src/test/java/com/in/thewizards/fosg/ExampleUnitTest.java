@@ -1,4 +1,4 @@
-package com.example.bghosh.test3upload;
+package com.in.thewizards.fosg;
 
 import org.junit.Test;
 

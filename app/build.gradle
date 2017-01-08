@@ -4,8 +4,8 @@ android {
     compileSdkVersion 24
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId "com.example.bghosh.test3upload"
-        minSdkVersion 15
+        applicationId "com.in.thewizards.fosg"
+        minSdkVersion 11
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
