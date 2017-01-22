@@ -2,9 +2,11 @@ package com.in.thewizards.fosg;
 
 import android.annotation.TargetApi;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -51,6 +53,21 @@ public class MainActivity extends AppCompatActivity {
         }
         else
             Toast.makeText(MainActivity.this, "Failed to Upload Image", Toast.LENGTH_LONG).show();
+    }
+
+    /*Back button handling Confirmation dialog */
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
     @Override
@@ -142,6 +159,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
+
+
+
+
     }
 
     public class myWebClient extends WebViewClient {
@@ -149,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);
+
+            WebSettings webSettings = view.getSettings();
+            webSettings.setJavaScriptEnabled(true);
             return true;
         }
     }
